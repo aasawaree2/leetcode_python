@@ -1,10 +1,10 @@
 class Solutions:
-    def fibo(self, number):
+    def func(self):
         pass
 
 
 def main():
-    pass
+    s = Solutions()
 
 
 if __name__ == '__main__':
