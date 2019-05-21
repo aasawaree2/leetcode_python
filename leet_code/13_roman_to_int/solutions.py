@@ -1,4 +1,5 @@
 class Solution:
+    # O(N) Solution
     def romanToInt(self, s: str) -> int:
         map1 = {'I': 1,
                 'V': 5,
@@ -8,14 +9,12 @@ class Solution:
                 'D': 500,
                 'M': 1000}
         sum1 = 0
-        prev = 'I'
-        for c in s[::-1]:
-            if map1[c] < map1[prev]:
-                sum1 -= map1[c]
+        for i in range(len(s) - 1):
+            if map1[s[i]] < map1[s[i + 1]]:
+                sum1 -= map1[s[i]]
             else:
-                sum1 += map1[c]
-            prev = c
-        return sum1
+                sum1 += map1[s[i]]
+        return sum1 + map1[s[len(s) - 1]]
 
 
 def main():
